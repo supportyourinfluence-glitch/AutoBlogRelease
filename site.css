@@ -1,0 +1,97 @@
+/* Shared styling for the public pages (landing + legal documents).
+   Plain CSS on purpose: PG reviewers open these directly, and a build step
+   would be one more thing that can break before an audit. */
+
+:root {
+  --bg: #ffffff;
+  --text: #1b1f27;
+  --muted: #667085;
+  --line: #e5e7eb;
+  --accent: #2f6bff;
+  --panel: #f7f8fa;
+  --ok: #0f9d58;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.7 system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+  word-break: keep-all;
+}
+
+header.site {
+  border-bottom: 1px solid var(--line);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+header.site .brand { font-weight: 700; font-size: 17px; }
+header.site nav { margin-left: auto; display: flex; gap: 14px; flex-wrap: wrap; }
+header.site nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
+header.site nav a:hover { color: var(--accent); }
+
+main { max-width: 860px; margin: 0 auto; padding: 32px 20px 64px; }
+
+h1 { font-size: 30px; line-height: 1.35; margin: 0 0 12px; }
+h2 { font-size: 20px; margin: 32px 0 10px; padding-top: 8px; }
+h3 { font-size: 16px; margin: 20px 0 6px; }
+p, li { color: #2c313b; }
+ul, ol { padding-left: 20px; }
+
+.lead { font-size: 18px; color: var(--muted); margin-bottom: 28px; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 18px 0;
+}
+
+.notice {
+  border-left: 4px solid #f0a500;
+  background: #fff8e6;
+  padding: 14px 16px;
+  border-radius: 6px;
+  margin: 18px 0;
+}
+
+.todo {
+  border-left: 4px solid #d92d20;
+  background: #fff1f0;
+  padding: 14px 16px;
+  border-radius: 6px;
+  margin: 18px 0;
+  font-size: 14px;
+}
+
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+.price {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px;
+}
+.price .amount { font-size: 28px; font-weight: 700; margin: 6px 0 2px; }
+.price .per { color: var(--muted); font-size: 14px; }
+.price ul { margin: 14px 0 0; }
+
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; font-size: 14px; }
+
+footer.site {
+  border-top: 1px solid var(--line);
+  padding: 24px 20px 48px;
+  color: var(--muted);
+  font-size: 13px;
+}
+footer.site .biz { max-width: 860px; margin: 0 auto; }
+footer.site a { color: var(--muted); }
+
+code { background: var(--panel); padding: 1px 5px; border-radius: 4px; font-size: 14px; }

@@ -1,12 +1,127 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoBlogRelease</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BlogFlow — 네이버 블로그 자동 초안·예약 발행</title>
+<meta name="description" content="트렌드 키워드로 블로그 초안을 만들고 이미지까지 넣어 예약 발행하는 도구." />
+<link rel="stylesheet" href="/site.css" />
 </head>
 <body>
-  <h1>AutoBlogRelease</h1>
-  <p>자동 블로그 발행 서비스입니다.</p>
+<header class="site">
+  <span class="brand">BlogFlow</span>
+  <nav>
+    <a href="#features">기능</a>
+    <a href="#pricing">요금</a>
+    <a href="#notice">이용 전 확인</a>
+    <a href="/terms">이용약관</a>
+    <a href="/refund">환불정책</a>
+  </nav>
+</header>
+
+<main>
+  <h1>블로그 글쓰기의 반복 작업을 자동으로</h1>
+  <p class="lead">
+    트렌드 키워드를 모아 초안을 만들고, 문단마다 이미지를 넣어, 30분 간격으로
+    예약 발행합니다. 내 PC에서 내 계정으로 동작합니다.
+  </p>
+
+  <div class="todo">
+    <strong>[배포 전 확인]</strong> 이 페이지는 결제 심사·판매용 초안입니다. 아래
+    <em>대괄호로 표시된 항목</em>(사업자 정보, 요금, 문의처)을 실제 값으로 채운 뒤
+    공개하세요. 값이 비어 있으면 PG 심사에서 반려됩니다.
+  </div>
+
+  <h2 id="features">주요 기능</h2>
+  <div class="grid">
+    <div class="panel">
+      <h3>키워드 추천</h3>
+      <p>실시간 트렌드와 쇼핑 인사이트를 모아 후보를 제안합니다. 직접 입력할 수도 있습니다.</p>
+    </div>
+    <div class="panel">
+      <h3>초안 자동 작성</h3>
+      <p>선택한 키워드로 본문을 생성하고, 문단마다 관련 이미지를 한 장씩 넣습니다.</p>
+    </div>
+    <div class="panel">
+      <h3>예약 발행</h3>
+      <p>최소 30분 간격으로 순차 예약합니다. 발행 이력에서 결과를 확인할 수 있습니다.</p>
+    </div>
+    <div class="panel">
+      <h3>내 PC에서 실행</h3>
+      <p>글 내용과 계정 정보는 사용자 PC에 저장됩니다. 서버는 계정·이용권만 관리합니다.</p>
+    </div>
+  </div>
+
+  <h2 id="pricing">요금</h2>
+  <div class="todo">
+    <strong>[요금 미확정]</strong> 아래 금액은 예시입니다. 실제 판매가로 바꾸세요.
+    가격을 바꾸면 <code>server/static/landing.html</code>과 환불정책의 금액 표기도
+    함께 수정해야 합니다.
+  </div>
+  <div class="grid">
+    <div class="price">
+      <div>월 구독</div>
+      <div class="amount">[00,000]원</div>
+      <div class="per">월 1회 자동결제 · 부가세 포함 여부: [표기 필요]</div>
+      <ul>
+        <li>키워드 추천 · 초안 생성 · 이미지 삽입</li>
+        <li>예약 발행 및 발행 이력</li>
+        <li>언제든 해지 가능 (다음 결제일부터 미청구)</li>
+      </ul>
+    </div>
+    <div class="price">
+      <div>포함되지 않는 비용</div>
+      <div class="amount">별도</div>
+      <div class="per">이용자 본인 부담</div>
+      <ul>
+        <li>AI 글 생성 API 사용료 (본인 키 사용)</li>
+        <li>네이버 검색 API 등 외부 서비스 이용료</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="notice">이용 전 반드시 확인</h2>
+  <div class="notice">
+    <ul>
+      <li>
+        네이버는 자동 게시를 약관으로 제한합니다. 어뷰징으로 탐지되면 계정이 제재될 수
+        있으며, 그 책임은 이용자 본인에게 있습니다. 하루 3~5회 이내 사용을 권장합니다.
+      </li>
+      <li>예약 발행은 이용자 PC가 켜져 있고 프로그램이 실행 중일 때만 동작합니다.</li>
+      <li>
+        삽입되는 이미지는 검색 결과이며 제3자 저작권 대상일 수 있습니다. 발행 전 확인이
+        필요합니다.
+      </li>
+      <li>AI 글 생성 비용은 이용자 본인 부담입니다(본인 API 키 사용).</li>
+    </ul>
+  </div>
+
+  <h2>시작하기</h2>
+  <ol>
+    <li>구독 결제 후 계정을 만듭니다.</li>
+    <li>프로그램을 내려받아 설치하고, 그 계정으로 로그인합니다.</li>
+    <li>네이버 로그인과 API 키를 연결하면 바로 사용할 수 있습니다.</li>
+  </ol>
+  <p class="lead" style="font-size:15px">
+    문의: [문의 이메일 입력] · 운영시간 [예: 평일 10:00–18:00]
+  </p>
+</main>
+
+<footer class="site">
+  <div class="biz">
+    <p>
+      <strong>BlogFlow</strong><br />
+      상호: [상호명 입력] · 대표자: [대표자명 입력]<br />
+      사업자등록번호: [사업자등록번호 입력] · 통신판매업 신고번호: [신고번호 입력]<br />
+      주소: [사업장 주소 입력] · 이메일: [문의 이메일 입력] · 전화: [연락처 입력]
+    </p>
+    <p>
+      <a href="/terms">이용약관</a> ·
+      <a href="/privacy">개인정보처리방침</a> ·
+      <a href="/refund">환불정책</a>
+    </p>
+    <p>© BlogFlow. All rights reserved.</p>
+  </div>
+</footer>
 </body>
 </html>
