@@ -72,6 +72,57 @@ ul, ol { padding-left: 20px; }
 
 .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 
+/* Call-to-action buttons. A sales page with no visible way to buy was the
+   original defect these styles exist to fix. */
+.cta {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+.cta:hover { filter: brightness(1.08); }
+.cta.secondary {
+  background: #fff;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 24px 0 8px; }
+.cta-note { color: var(--muted); font-size: 14px; margin: 0 0 28px; }
+
+/* Numbered steps on the "시작하기" section, so the path from paying to
+   publishing is visible at a glance rather than buried in prose. */
+.steps { list-style: none; padding: 0; margin: 16px 0; counter-reset: step; }
+.steps li {
+  counter-increment: step;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px 16px 52px;
+  margin-bottom: 12px;
+  position: relative;
+}
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.steps li strong { display: block; margin-bottom: 4px; }
+.steps li p { margin: 0; font-size: 14px; color: var(--muted); }
+
 .price {
   border: 1px solid var(--line);
   border-radius: 12px;
