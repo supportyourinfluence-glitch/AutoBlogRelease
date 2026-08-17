@@ -3,8 +3,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/checkout", "destination": "/start.html" },
-    { "source": "/download", "destination": "/start.html" }
+    { "source": "/checkout", "destination": "/start" },
+    { "source": "/download", "destination": "/start" }
   ],
   "headers": [
     {
